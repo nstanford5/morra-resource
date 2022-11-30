@@ -82,7 +82,7 @@ if(isAlice) {
   };
 }
 
-interact.getHand = async () => {
+interact.getFingers = async () => {
   const hand = await ask.ask(`What hand will you play? (0-5 only)`);
   console.log(`You played ${hand}`);
   return hand;

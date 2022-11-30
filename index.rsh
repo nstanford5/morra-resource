@@ -3,18 +3,18 @@
 const [gameOutcome, A_WINS, B_WINS, DRAW] = makeEnum(3);
 
 // function that computes the winner based on hands and guesses
-const winner = (playHandA, playHandB, gHandA, gHandB) => {
+const winner = (fingersA, fingersB, guessA, guessB) => {
 
   // if both guesses are the same
-  if (gHandA == gHandB) {
+  if (guessA == guessB) {
     return DRAW;
   } else {
     // if first player guess is equal to total of both hands played
-    if (gHandA == (playHandA + playHandB)) {
+    if (guessA == (fingersA + fingersB)) {
       return A_WINS;
     } else {
       // if second player guess is equal to total of both hands played
-      if (gHandB == (playHandA + playHandB)) {
+      if (guessB == (fingersA + fingersB)) {
         return B_WINS;
         // else the outcome is a draw
       } else {
@@ -45,7 +45,7 @@ forall(_, _ =>
 // shared player method signatures
 const Shared = {
   ...hasRandom, 
-  getHand: Fun([], UInt),
+  getFingers: Fun([], UInt),
   getGuess: Fun([UInt], UInt),
   seeOutcome: Fun([UInt], Null),
   informTimeout: Fun([], Null),

@@ -130,7 +130,7 @@ export const main = Reach.App(() => {
 
     // update loop variable by passing values to winner function
 
-    // explicitly continue, must be the tail here
+    // explicit continue, must be the tail here
     continue;
   }; // end of while loop
 
